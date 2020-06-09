@@ -8,7 +8,7 @@ class SimpleS3 {
 
   static const MethodChannel _methodChannel = const MethodChannel('simple_s3');
 
-  static const EventChannel _eventChannel = const EventChannel("simple_s3_events");
+//  static const EventChannel _eventChannel = const EventChannel("simple_s3_events");
 
 //  Stream get getUploadStatus => _eventChannel.receiveBroadcastStream();
 

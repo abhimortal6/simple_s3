@@ -6,3 +6,6 @@ Refactor example update
 
 ## 0.2.0
 Removed unused methods
+
+## 0.2.1
+Removed unused methods
