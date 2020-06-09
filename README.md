@@ -1,5 +1,5 @@
 
-# simple_s3  
+# simple_s3
   
 An advance yet simple to use AWS S3 plugin for upload and deletion.  
   
@@ -9,7 +9,7 @@ An advance yet simple to use AWS S3 plugin for upload and deletion.
 
 Add  dependency in *pubspec.yaml*
 
-`simple_s3: 0.0.1`
+`simple_s3: 0.1.0`
 
  [Follow @ab_hi_j on Twitter](https://twitter.com/ab_hi_j)
 
@@ -52,10 +52,10 @@ String result = await SimpleS3.uploadFile(
 // returns bool
 
 bool result = await SimpleS3.delete(
-				filePath, <------------------------------ S3 File Path
-				bucketName, <---------------------------- Your Bucket Name
-				poolID, <-------------------------------- Your POOL ID
-				AWSRegions.apSouth1, <------------------- S3 server region
+				filePath, <---------------- S3 File Path
+				bucketName, <-------------- Your Bucket Name
+				poolID, <------------------ Your POOL ID
+				AWSRegions.apSouth1, <----- S3 server region
 				);
 
 // delete also supports sub-regions

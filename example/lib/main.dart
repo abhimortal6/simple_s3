@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:simple_s3/simple_s3.dart';
 
 void main() => runApp(MyApp());
 
@@ -58,24 +57,25 @@ class SimpleS3TestState extends State<SimpleS3Test> {
                 ),
               ),
       ),
-      floatingActionButton: !isLoading ? FloatingActionButton(
-        backgroundColor: uploaded ? Colors.green : Colors.blue,
-        child: Icon(
-          uploaded ? Icons.delete : Icons.arrow_upward,
-          color: Colors.white,
-        ),
-        onPressed: () async {
-          if (uploaded) {
-            print(await SimpleS3.delete(filePath, bucketName, poolID, AWSRegions.apSouth1,
-                debugLog: true));
-            setState(() {
-              selectedFile = null;
-              uploaded = false;
-            });
-          }
-          if (selectedFile != null) _upload();
-        },
-      ):null,
+      floatingActionButton: !isLoading
+          ? FloatingActionButton(
+              backgroundColor: uploaded ? Colors.green : Colors.blue,
+              child: Icon(
+                uploaded ? Icons.delete : Icons.arrow_upward,
+                color: Colors.white,
+              ),
+              onPressed: () async {
+                if (uploaded) {
+//                  print(await SimpleS3.delete(filePath, bucketName, poolID, AWSRegions.apSouth1, debugLog: true));
+                  setState(() {
+                    selectedFile = null;
+                    uploaded = false;
+                  });
+                }
+                if (selectedFile != null) _upload();
+              },
+            )
+          : null,
     );
   }
 
@@ -87,8 +87,8 @@ class SimpleS3TestState extends State<SimpleS3Test> {
         setState(() {
           isLoading = true;
         });
-        String result = await SimpleS3.uploadFile(selectedFile, bucketName, poolID, AWSRegions.apSouth1,
-            debugLog: true, s3FolderPath: "test", accessControl: S3AccessControl.publicRead);
+//        String result = await SimpleS3.uploadFile(selectedFile, bucketName, poolID, AWSRegions.apSouth1,
+//            debugLog: true, s3FolderPath: "test", accessControl: S3AccessControl.publicRead);
 
         setState(() {
           uploaded = true;
