@@ -10,7 +10,7 @@ class SimpleS3 {
 
   static const EventChannel _eventChannel = const EventChannel("simple_s3_events");
 
-  Stream get getUploadStatus => _eventChannel.receiveBroadcastStream();
+//  Stream get getUploadStatus => _eventChannel.receiveBroadcastStream();
 
   static Future<String> uploadFile(
     File file,

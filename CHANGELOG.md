@@ -1,6 +1,8 @@
 ## 0.0.1
 Initial release
 
-## 0.1.1
+## 0.1.0
 Refactor example update
 
+## 0.2.0
+Removed unused methods
