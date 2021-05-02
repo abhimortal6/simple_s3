@@ -202,17 +202,17 @@ public class SimpleS3Plugin implements FlutterPlugin, MethodCallHandler, EventCh
             CognitoCredentialsProvider credentialsProvider = new CognitoCredentialsProvider(poolID, parsedRegion, clientConfiguration);
             TransferNetworkLossHandler.getInstance(mContext.getApplicationContext());
 
-           final AmazonS3Client amazonS3Client = new AmazonS3Client(credentialsProvider);
+            final AmazonS3Client amazonS3Client = new AmazonS3Client(credentialsProvider);
             amazonS3Client.setRegion(com.amazonaws.regions.Region.getRegion(parsedSubRegion));
 
-           final DeleteObjectRequest deleteObjectRequest = new DeleteObjectRequest(bucketName, filePath).withGeneralProgressListener(new Progress());
+            final DeleteObjectRequest deleteObjectRequest = new DeleteObjectRequest(bucketName, filePath).withGeneralProgressListener(new Progress());
 
 
 
             Thread thread = new Thread() {
                 @Override
                 public void run() {
-                     amazonS3Client.deleteObject(deleteObjectRequest);
+                    amazonS3Client.deleteObject(deleteObjectRequest);
                 }
             };
 

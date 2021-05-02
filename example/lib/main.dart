@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_s3/simple_s3.dart';
+import 'package:simple_s3_example/Credentials.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,10 +24,16 @@ class SimpleS3Test extends StatefulWidget {
 }
 
 class SimpleS3TestState extends State<SimpleS3Test> {
-  File selectedFile;
+  File? selectedFile;
 
+  SimpleS3 _simpleS3 = SimpleS3();
   bool isLoading = false;
   bool uploaded = false;
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -37,18 +45,24 @@ class SimpleS3TestState extends State<SimpleS3Test> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: new Text(
-          "Simple S3 Test",
-        ),
+        title: StreamBuilder<dynamic>(
+            stream: _simpleS3.getUploadStatus,
+            builder: (context, snapshot) {
+              return new Text(
+                snapshot.data == null ? "Simple S3 Test" : "Uploaded: ${snapshot.data}",
+              );
+            }),
       ),
       body: Center(
         child: selectedFile != null
-            ? isLoading ? CircularProgressIndicator() : Image.file(selectedFile)
+            ? isLoading
+                ? CircularProgressIndicator()
+                : Image.file(selectedFile!)
             : GestureDetector(
                 onTap: () async {
-                  File _file = await FilePicker.getFile(type: FileType.image);
+                  FilePickerResult _file = (await FilePicker.platform.pickFiles(type: FileType.image))!;
                   setState(() {
-                    selectedFile = _file;
+                    selectedFile = File(_file.files.first.path!);
                   });
                 },
                 child: Icon(
@@ -66,7 +80,9 @@ class SimpleS3TestState extends State<SimpleS3Test> {
               ),
               onPressed: () async {
                 if (uploaded) {
-//                  print(await SimpleS3.delete(filePath, bucketName, poolID, AWSRegions.apSouth1, debugLog: true));
+                  print(await SimpleS3.delete(
+                      "test/${selectedFile!.path.split("/").last}", Credentials.s3_filePath, Credentials.s3_bucketId, AWSRegions.apSouth1,
+                      debugLog: true));
                   setState(() {
                     selectedFile = null;
                     uploaded = false;
@@ -79,16 +95,23 @@ class SimpleS3TestState extends State<SimpleS3Test> {
     );
   }
 
-  Future<String> _upload() async {
-    String result;
+  Future<String?> _upload() async {
+    String? result;
 
     if (result == null) {
       try {
         setState(() {
           isLoading = true;
         });
-//        String result = await SimpleS3.uploadFile(selectedFile, bucketName, poolID, AWSRegions.apSouth1,
-//            debugLog: true, s3FolderPath: "test", accessControl: S3AccessControl.publicRead);
+        result = await _simpleS3.uploadFile(
+          selectedFile!,
+          Credentials.s3_filePath,
+          Credentials.s3_bucketId,
+          AWSRegions.apSouth1,
+          debugLog: true,
+          s3FolderPath: "test",
+          accessControl: S3AccessControl.publicRead,
+        );
 
         setState(() {
           uploaded = true;

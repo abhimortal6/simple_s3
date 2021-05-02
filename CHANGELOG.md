@@ -9,3 +9,6 @@ Removed unused methods
 
 ## 0.2.1
 Removed unused methods
+
+## 0.3.0
+Added null safety, upload percentage
