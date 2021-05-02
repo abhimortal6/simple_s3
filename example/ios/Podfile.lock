@@ -1,9 +1,9 @@
 PODS:
-  - AWSCognito (2.12.5):
-    - AWSCore (= 2.12.5)
-  - AWSCore (2.12.5)
-  - AWSS3 (2.12.5):
-    - AWSCore (= 2.12.5)
+  - AWSCognito (2.15.3):
+    - AWSCore (= 2.15.3)
+  - AWSCore (2.15.3)
+  - AWSS3 (2.15.3):
+    - AWSCore (= 2.15.3)
   - DKImagePickerController/Core (4.2.2):
     - DKImagePickerController/ImageDataManager
     - DKImagePickerController/Resource
@@ -40,14 +40,12 @@ PODS:
     - Flutter
   - FLAnimatedImage (1.0.12)
   - Flutter (1.0.0)
-  - flutter_plugin_android_lifecycle (0.0.1):
-    - Flutter
-  - SDWebImage (5.5.2):
-    - SDWebImage/Core (= 5.5.2)
-  - SDWebImage/Core (5.5.2)
-  - SDWebImageFLPlugin (0.3.0):
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
+  - SDWebImageFLPlugin (0.4.0):
     - FLAnimatedImage (>= 1.0.11)
-    - SDWebImage/Core (~> 5.0)
+    - SDWebImage/Core (~> 5.6)
   - simple_s3 (0.0.1):
     - AWSCognito
     - AWSCore
@@ -57,7 +55,6 @@ PODS:
 DEPENDENCIES:
   - file_picker (from `.symlinks/plugins/file_picker/ios`)
   - Flutter (from `Flutter`)
-  - flutter_plugin_android_lifecycle (from `.symlinks/plugins/flutter_plugin_android_lifecycle/ios`)
   - simple_s3 (from `.symlinks/plugins/simple_s3/ios`)
 
 SPEC REPOS:
@@ -76,25 +73,22 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/file_picker/ios"
   Flutter:
     :path: Flutter
-  flutter_plugin_android_lifecycle:
-    :path: ".symlinks/plugins/flutter_plugin_android_lifecycle/ios"
   simple_s3:
     :path: ".symlinks/plugins/simple_s3/ios"
 
 SPEC CHECKSUMS:
-  AWSCognito: c17db6fff09d0338b8fc72810cb13b185d106bfb
-  AWSCore: 543d1c281ad08401d0a99e181526aa529051a8ad
-  AWSS3: 43c54c47c90e0ba408784117827a085ca5123830
+  AWSCognito: ec9146a0113ee96e4093569ed253fde90770b056
+  AWSCore: 5a8f9d7461dbe5ea6a5473c41cf113b687e19136
+  AWSS3: 04a7e689791b382d2d1e29cda6852048e0555635
   DKImagePickerController: 4a3e7948a848c4348e600b3fe5ce41478835fa10
   DKPhotoGallery: 0290d32343574f06eaa4c26f8f2f8a1035e916be
   file_picker: 3e6c3790de664ccf9b882732d9db5eaf6b8d4eb1
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_plugin_android_lifecycle: dc0b544e129eebb77a6bfb1239d4d1c673a60a35
-  SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
-  SDWebImageFLPlugin: cf3f4ae49f249dd785129346fd61bbc8433a88cf
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
+  SDWebImageFLPlugin: 6c2295fb1242d44467c6c87dc5db6b0a13228fd8
   simple_s3: dc1e236435ab824abf10e6147110fe86ab32c51c
 
-PODFILE CHECKSUM: c34e2287a9ccaa606aeceab922830efb9a6ff69a
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1

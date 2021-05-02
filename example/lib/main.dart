@@ -46,7 +46,7 @@ class SimpleS3TestState extends State<SimpleS3Test> {
       appBar: AppBar(
         centerTitle: true,
         title: StreamBuilder<dynamic>(
-            stream: _simpleS3.getUploadStatus,
+            stream: _simpleS3.getUploadPercentage,
             builder: (context, snapshot) {
               return new Text(
                 snapshot.data == null ? "Simple S3 Test" : "Uploaded: ${snapshot.data}",
