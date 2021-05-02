@@ -81,7 +81,7 @@ class SimpleS3TestState extends State<SimpleS3Test> {
               onPressed: () async {
                 if (uploaded) {
                   print(await SimpleS3.delete(
-                      "test/${selectedFile!.path.split("/").last}", Credentials.s3_filePath, Credentials.s3_bucketId, AWSRegions.apSouth1,
+                      "test/${selectedFile!.path.split("/").last}", Credentials.s3_bucketName, Credentials.s3_poolD, AWSRegions.apSouth1,
                       debugLog: true));
                   setState(() {
                     selectedFile = null;
@@ -105,8 +105,8 @@ class SimpleS3TestState extends State<SimpleS3Test> {
         });
         result = await _simpleS3.uploadFile(
           selectedFile!,
-          Credentials.s3_filePath,
-          Credentials.s3_bucketId,
+          Credentials.s3_bucketName,
+          Credentials.s3_poolD,
           AWSRegions.apSouth1,
           debugLog: true,
           s3FolderPath: "test",

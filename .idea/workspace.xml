@@ -1,57 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04354486-e0be-4078-90c0-1374fd9270a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/doc/api/__404error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/categories.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions-class.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/AWSRegions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/apEast1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/apNorthEast1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/apNorthEast2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/apSouth1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/apSouthEast1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/apSouthEast2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/caCentral1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/cnNorth1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/cnNorthWest1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/euCentral1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/euNorth1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/euWest1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/euWest2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/euWest3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/meSouth1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/saEast1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/usEast1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/usEast2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/usGovEast1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/usGovWest1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/usWest1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/AWSRegions/usWest2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/S3AccessControl-class.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/S3AccessControl/toString.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/SimpleS3-class.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/SimpleS3/SimpleS3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/SimpleS3/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/SimpleS3/getUploadPercentage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/SimpleS3/uploadFile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/SimpleS3Errors-class.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/SimpleS3Errors/toString.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/TimestampLocation-class.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/TimestampLocation/toString.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/simple_s3/simple_s3-library.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/static-assets/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/static-assets/github.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/static-assets/highlight.pack.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/static-assets/play_button.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/static-assets/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/static-assets/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/api/static-assets/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="04354486-e0be-4078-90c0-1374fd9270a3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,9 +58,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="440" y="274" key="Vcs.Push.Dialog.v2" timestamp="1619940968338">
+    <state x="440" y="274" key="Vcs.Push.Dialog.v2" timestamp="1619943093352">
       <screen x="0" y="25" width="1680" height="1025" />
     </state>
-    <state x="440" y="274" key="Vcs.Push.Dialog.v2/0.25.1680.1025@0.25.1680.1025" timestamp="1619940968338" />
+    <state x="440" y="274" key="Vcs.Push.Dialog.v2/0.25.1680.1025@0.25.1680.1025" timestamp="1619943093352" />
   </component>
 </project>
