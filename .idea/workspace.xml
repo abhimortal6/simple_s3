@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04354486-e0be-4078-90c0-1374fd9270a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/proguard-aws-2.1.5.pro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/simple_s3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/simple_s3.dart" afterDir="false" />
-    </list>
+    <list default="true" id="04354486-e0be-4078-90c0-1374fd9270a3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,5 +91,9 @@
       <screen x="0" y="25" width="1680" height="1025" />
     </state>
     <state x="341" y="173" key="SettingsEditor/0.25.1680.1025@0.25.1680.1025" timestamp="1619938037176" />
+    <state x="440" y="274" key="Vcs.Push.Dialog.v2" timestamp="1619940460066">
+      <screen x="0" y="25" width="1680" height="1025" />
+    </state>
+    <state x="440" y="274" key="Vcs.Push.Dialog.v2/0.25.1680.1025@0.25.1680.1025" timestamp="1619940460066" />
   </component>
 </project>

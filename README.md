@@ -1,4 +1,5 @@
 
+
 # simple_s3
   
 An advance yet simple to use AWS S3 plugin for upload and deletion.  
@@ -9,7 +10,7 @@ An advance yet simple to use AWS S3 plugin for upload and deletion.
 
 Add  dependency in *pubspec.yaml*
 
-`simple_s3: 0.2.1`
+`simple_s3: 0.3.0`
 
  [Follow @ab_hi_j on Twitter](https://twitter.com/ab_hi_j)
 
@@ -18,6 +19,8 @@ Add  dependency in *pubspec.yaml*
 
 | Feature | Description |
 | ----- | ----------- |
+| Null Safe | :white_check_mark: |
+| Upload Percentage | :white_check_mark: |
 | Supports all files | SimpleS3 auto detects content type of file by looking into extension |
 | Set Access Type | Allows you to set access type of file ex. PublicRead, Private etc <br> Default is **Public Read** |
 | Timestamp | Turned off by default if turned on  allows you to append timestamp in file name. <br>Location of timestamp can be changed to either **prefix** or **suffix** <br> Default is **prefix**|
@@ -26,6 +29,12 @@ Add  dependency in *pubspec.yaml*
 | Sub Region Support | Allows upload/delete operations on S3 having sub regions |
 | Delete Object | Allows deletion of file object |
 | Auto Generates URL| URL pointing to S3 file is auto generated. <br>  |
+
+
+### Not working in Android Release mode ?
+
+
+If your Android app is not working in release mode please check [this section](android-proguard-settings-for-release-mode) 
 
 ## Usage Examples
 
@@ -36,7 +45,8 @@ Add  dependency in *pubspec.yaml*
 
 // returns url pointing to S3 file
 
-String result = await SimpleS3.uploadFile(
+SimpleS3 _simpleS3 = SimpleS3();
+String result = await _simpleS3.uploadFile(
 				file, <--------------- Selected File
 				bucketName, <--------- Your Bucket Name
 				poolID, <------------- Your POOL ID
@@ -61,7 +71,31 @@ bool result = await SimpleS3.delete(
 // delete also supports sub-regions
 
 ```
+### File Upload with Percentage
 
+```dart
+
+// returns url pointing to S3 file
+
+SimpleS3 _simpleS3 = SimpleS3();
+//Upload function
+String result = await _simpleS3.uploadFile(
+				file, <--------------- Selected File
+				bucketName, <--------- Your Bucket Name
+				poolID, <------------- Your POOL ID
+				AWSRegions.apSouth1 <- S3 server region
+				);
+
+//Widget
+child: StreamBuilder<dynamic>(  
+    stream: _simpleS3.getUploadPercentage,  
+    builder: (context, snapshot) {  
+      return new Text(  
+        snapshot.data != null ? "Uploaded: ${snapshot.data}" : "Simple S3",  
+    );  
+  }),
+
+```
 
 ### Custom File Name
 
@@ -69,7 +103,8 @@ bool result = await SimpleS3.delete(
 
 // returns url pointing to S3 file
 
-String result = await SimpleS3.uploadFile(
+SimpleS3 _simpleS3 = SimpleS3();
+String result = await _simpleS3.uploadFile(
 				file, <------------------------------ Selected File
 				bucketName, <------------------------ Your Bucket Name
 				poolID, <---------------------------- Your POOL ID
@@ -85,7 +120,8 @@ String result = await SimpleS3.uploadFile(
 
 // returns url pointing to S3 file
 
-String result = await SimpleS3.uploadFile(
+SimpleS3 _simpleS3 = SimpleS3();
+String result = await _simpleS3.uploadFile(
 				file, <-------------------------------- Selected File
 				bucketName, <--------------------------- Your Bucket Name
 				poolID, <------------------------------- Your POOL ID
@@ -104,7 +140,8 @@ String result = await SimpleS3.uploadFile(
 
 // returns url pointing to S3 file
 
-String result = await SimpleS3.uploadFile(
+SimpleS3 _simpleS3 = SimpleS3();
+String result = await _simpleS3.uploadFile(
 				file, <------------------------------------- Selected File
 				bucketName, <------------------------------- Your Bucket Name
 				poolID, <----------------------------------- Your POOL ID
@@ -123,7 +160,8 @@ String result = await SimpleS3.uploadFile(
 
 // returns url pointing to S3 file
 
-String result = await SimpleS3.uploadFile(
+SimpleS3 _simpleS3 = SimpleS3();
+String result = await _simpleS3.uploadFile(
 				file, <------------------------------------- Selected File
 				bucketName, <------------------------------- Your Bucket Name
 				poolID, <----------------------------------- Your POOL ID
@@ -140,7 +178,8 @@ String result = await SimpleS3.uploadFile(
 
 
 
-String result = await SimpleS3.uploadFile(
+SimpleS3 _simpleS3 = SimpleS3();
+String result = await _simpleS3.uploadFile(
 				file, <--------------------------------------- Selected File
 				bucketName, <--------------------------------- Your Bucket Name
 				poolID, <------------------------------------- Your POOL ID
@@ -160,7 +199,8 @@ String result = await SimpleS3.uploadFile(
 
 // returns url pointing to S3 file
 
-String result = await SimpleS3.uploadFile(
+SimpleS3 _simpleS3 = SimpleS3();
+String result = await _simpleS3.uploadFile(
 				file, <------------------------------------- Selected File
 				bucketName, <------------------------------- Your Bucket Name
 				poolID, <----------------------------------- Your POOL ID
@@ -176,7 +216,8 @@ String result = await SimpleS3.uploadFile(
 
 // for security reasons plugin uses less logs, to enable full logs -
 
-String result = await SimpleS3.uploadFile(
+SimpleS3 _simpleS3 = SimpleS3();
+String result = await _simpleS3.uploadFile(
 				file, <--------------- Selected File
 				bucketName, <--------- Your Bucket Name
 				poolID, <------------- Your POOL ID
@@ -185,3 +226,32 @@ String result = await SimpleS3.uploadFile(
 				);
 
 ```
+
+
+## Android Proguard settings for release mode
+
+```dart
+
+// add these lines in your app/build.gradle
+
+		minifyEnabled true  
+		useProguard true  
+		proguardFiles getDefaultProguardFile('proguard-android.txt'),  
+		        'proguard-aws-2.1.5.pro'
+
+//EXAMPLE
+		buildTypes {  
+		  release {  
+		  signingConfig signingConfigs.release  
+		  minifyEnabled true  
+		  useProguard true  
+		  proguardFiles getDefaultProguardFile('proguard-android.txt'),  
+		                'proguard-aws-2.1.5.pro'  
+		  }  
+		}
+```
+
+Now copy contents of this file [proguard-aws-2.1.5.pro](https://github.com/abhimortal6/simple_s3/blob/master/proguard-aws-2.1.5.pro)
+Create a new file with name "proguard-aws-2.1.5.pro" at the same location as app/build.gradle and paste the copied contents into this file.
+
+Your release mode APK should work now.
