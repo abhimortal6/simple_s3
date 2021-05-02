@@ -34,7 +34,7 @@ Add  dependency in *pubspec.yaml*
 ### Not working in Android Release mode ?
 
 
-If your Android app is not working in release mode please check [this section](android-proguard-settings-for-release-mode) 
+If your Android app is not working in release mode please check [this section](#android-proguard-settings-for-release-mode) 
 
 ## Usage Examples
 
