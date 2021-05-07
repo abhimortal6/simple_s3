@@ -1,5 +1,6 @@
 
 
+
 # simple_s3
   
 An advance yet simple to use AWS S3 plugin for upload and deletion.  
@@ -10,7 +11,7 @@ An advance yet simple to use AWS S3 plugin for upload and deletion.
 
 Add  dependency in *pubspec.yaml*
 
-`simple_s3: 0.3.0`
+`simple_s3: 0.3.1`
 
  [Follow @ab_hi_j on Twitter](https://twitter.com/ab_hi_j)
 
@@ -30,11 +31,16 @@ Add  dependency in *pubspec.yaml*
 | Delete Object | Allows deletion of file object |
 | Auto Generates URL| URL pointing to S3 file is auto generated. <br>  |
 
+<br>
+<br>
 
-### Not working in Android Release mode ?
+
+## Not working in Android Release mode ?
 
 
 If your Android app is not working in release mode please check [this section](#android-proguard-settings-for-release-mode) 
+
+<br>
 
 ## Usage Examples
 

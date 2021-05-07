@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:file_picker/file_picker.dart';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:simple_s3/simple_s3.dart';
 import 'package:simple_s3_example/Credentials.dart';
 
@@ -60,9 +61,9 @@ class SimpleS3TestState extends State<SimpleS3Test> {
                 : Image.file(selectedFile!)
             : GestureDetector(
                 onTap: () async {
-                  FilePickerResult _file = (await FilePicker.platform.pickFiles(type: FileType.image))!;
+                  PickedFile _pickedFile = (await ImagePicker().getImage(source: ImageSource.gallery))!;
                   setState(() {
-                    selectedFile = File(_file.files.first.path!);
+                    selectedFile = File(_pickedFile.path);
                   });
                 },
                 child: Icon(

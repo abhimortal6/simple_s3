@@ -12,3 +12,6 @@ Removed unused methods
 
 ## 0.3.0
 Added null safety, upload percentage
+
+## 0.3.1
+Fixed iOS percentage formula

@@ -4,48 +4,9 @@ PODS:
   - AWSCore (2.15.3)
   - AWSS3 (2.15.3):
     - AWSCore (= 2.15.3)
-  - DKImagePickerController/Core (4.2.2):
-    - DKImagePickerController/ImageDataManager
-    - DKImagePickerController/Resource
-  - DKImagePickerController/ImageDataManager (4.2.2)
-  - DKImagePickerController/PhotoGallery (4.2.2):
-    - DKImagePickerController/Core
-    - DKPhotoGallery
-  - DKImagePickerController/Resource (4.2.2)
-  - DKPhotoGallery (0.0.14):
-    - DKPhotoGallery/Core (= 0.0.14)
-    - DKPhotoGallery/Model (= 0.0.14)
-    - DKPhotoGallery/Preview (= 0.0.14)
-    - DKPhotoGallery/Resource (= 0.0.14)
-    - SDWebImage
-    - SDWebImageFLPlugin
-  - DKPhotoGallery/Core (0.0.14):
-    - DKPhotoGallery/Model
-    - DKPhotoGallery/Preview
-    - SDWebImage
-    - SDWebImageFLPlugin
-  - DKPhotoGallery/Model (0.0.14):
-    - SDWebImage
-    - SDWebImageFLPlugin
-  - DKPhotoGallery/Preview (0.0.14):
-    - DKPhotoGallery/Model
-    - DKPhotoGallery/Resource
-    - SDWebImage
-    - SDWebImageFLPlugin
-  - DKPhotoGallery/Resource (0.0.14):
-    - SDWebImage
-    - SDWebImageFLPlugin
-  - file_picker (0.0.1):
-    - DKImagePickerController/PhotoGallery
-    - Flutter
-  - FLAnimatedImage (1.0.12)
   - Flutter (1.0.0)
-  - SDWebImage (5.9.5):
-    - SDWebImage/Core (= 5.9.5)
-  - SDWebImage/Core (5.9.5)
-  - SDWebImageFLPlugin (0.4.0):
-    - FLAnimatedImage (>= 1.0.11)
-    - SDWebImage/Core (~> 5.6)
+  - image_picker (0.0.1):
+    - Flutter
   - simple_s3 (0.0.1):
     - AWSCognito
     - AWSCore
@@ -53,8 +14,8 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - file_picker (from `.symlinks/plugins/file_picker/ios`)
   - Flutter (from `Flutter`)
+  - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - simple_s3 (from `.symlinks/plugins/simple_s3/ios`)
 
 SPEC REPOS:
@@ -62,17 +23,12 @@ SPEC REPOS:
     - AWSCognito
     - AWSCore
     - AWSS3
-    - DKImagePickerController
-    - DKPhotoGallery
-    - FLAnimatedImage
-    - SDWebImage
-    - SDWebImageFLPlugin
 
 EXTERNAL SOURCES:
-  file_picker:
-    :path: ".symlinks/plugins/file_picker/ios"
   Flutter:
     :path: Flutter
+  image_picker:
+    :path: ".symlinks/plugins/image_picker/ios"
   simple_s3:
     :path: ".symlinks/plugins/simple_s3/ios"
 
@@ -80,13 +36,8 @@ SPEC CHECKSUMS:
   AWSCognito: ec9146a0113ee96e4093569ed253fde90770b056
   AWSCore: 5a8f9d7461dbe5ea6a5473c41cf113b687e19136
   AWSS3: 04a7e689791b382d2d1e29cda6852048e0555635
-  DKImagePickerController: 4a3e7948a848c4348e600b3fe5ce41478835fa10
-  DKPhotoGallery: 0290d32343574f06eaa4c26f8f2f8a1035e916be
-  file_picker: 3e6c3790de664ccf9b882732d9db5eaf6b8d4eb1
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
-  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
-  SDWebImageFLPlugin: 6c2295fb1242d44467c6c87dc5db6b0a13228fd8
+  image_picker: 50e7c7ff960e5f58faa4d1f4af84a771c671bc4a
   simple_s3: dc1e236435ab824abf10e6147110fe86ab32c51c
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c

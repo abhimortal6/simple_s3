@@ -105,9 +105,9 @@ public class SwiftSimpleS3Plugin: NSObject, FlutterPlugin {
             uploadRequest.uploadProgress = { (bytesSent, totalBytesSent,
                           totalBytesExpectedToSend) -> Void in
                           DispatchQueue.main.async(execute: {
-                           let uploadedPercentage = (Float(totalBytesSent) / (Float(bytesSent) + 0.1)) * 100
-
-                                self.events!(Int(uploadedPercentage))
+                           let uploadedPercentage = ( (Float(totalBytesSent) / Float(totalBytesExpectedToSend))) * 100
+                            if(self.events != nil){self.events!(Int(uploadedPercentage))}
+                                
                            })
                        }
 
