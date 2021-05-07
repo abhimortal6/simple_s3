@@ -1,6 +1,6 @@
 name: simple_s3
 description: An advanced yet simple to use AWS S3 plugin for upload and delete ANY file in Android and iOS.
-version: 0.3.1
+version: 0.3.2
 homepage: https://github.com/abhimortal6/simple_s3
 
 

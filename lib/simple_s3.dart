@@ -1,16 +1,22 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:mime_type/mime_type.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mime_type/mime_type.dart';
 
 class SimpleS3 {
   static const MethodChannel _methodChannel = const MethodChannel('simple_s3');
 
   static const EventChannel _eventChannel = const EventChannel("simple_s3_events");
 
+  ///Provide stream of dynamic type. This stream contains upload percentage.
   Stream get getUploadPercentage => _eventChannel.receiveBroadcastStream();
 
+  ///Upload function takes File, S3 bucket name, pool ID and region as required param
+  ///Default access control is PUBLIC_READ
+  ///Debugging is disable by default this will prevent any logs and messages
+  ///To enable use debugLog:true
   Future<String> uploadFile(
     File file,
     String bucketName,
@@ -97,6 +103,8 @@ class SimpleS3 {
     return result;
   }
 
+  ///S3 Delete static function requires no instance
+  ///Returns bool on success
   static Future<bool> delete(
     String filePath,
     String bucketName,
@@ -148,33 +156,61 @@ class _AWSRegion {
   _AWSRegion(this.region);
 }
 
+///AWS regions class created for consistency maintenance
+///contains static getters which returns an private class internally.
 class AWSRegions {
   static _AWSRegion get usEast1 => new _AWSRegion("us-east-1");
+
   static _AWSRegion get usEast2 => new _AWSRegion("us-east-2");
+
   static _AWSRegion get usWest1 => new _AWSRegion("us-west-1");
+
   static _AWSRegion get usWest2 => new _AWSRegion("us-west-2");
+
   static _AWSRegion get euWest1 => new _AWSRegion("eu-west-1");
+
   static _AWSRegion get euWest2 => new _AWSRegion("eu-west-2");
+
   static _AWSRegion get euWest3 => new _AWSRegion("eu-west-3");
+
   static _AWSRegion get euNorth1 => new _AWSRegion("eu-north-1");
+
   static _AWSRegion get euCentral1 => new _AWSRegion("eu-central-1");
+
   static _AWSRegion get apSouthEast1 => new _AWSRegion("ap-southeast-1");
+
   static _AWSRegion get apSouthEast2 => new _AWSRegion("ap-southeast-2");
+
   static _AWSRegion get apNorthEast1 => new _AWSRegion("ap-northeast-1");
+
   static _AWSRegion get apNorthEast2 => new _AWSRegion("ap-northeast-2");
+
   static _AWSRegion get apSouth1 => new _AWSRegion("ap-south-1");
+
   static _AWSRegion get apEast1 => new _AWSRegion("ap-east-1");
+
   static _AWSRegion get saEast1 => new _AWSRegion("sa-east-1");
+
   static _AWSRegion get cnNorth1 => new _AWSRegion("cn-north-1");
+
   static _AWSRegion get caCentral1 => new _AWSRegion("ca-central-1");
+
   static _AWSRegion get usGovWest1 => new _AWSRegion("us-gov-west-1");
+
   static _AWSRegion get usGovEast1 => new _AWSRegion("us-gov-east-1");
+
   static _AWSRegion get cnNorthWest1 => new _AWSRegion("cn-northwest-1");
+
   static _AWSRegion get meSouth1 => new _AWSRegion("me-south-1");
 }
 
+///TimeStamp enum
 enum TimestampLocation { prefix, suffix }
+
+///enum for Internal errors
 enum SimpleS3Errors { FileDoesNotExistsError, UploadError, DeleteError }
+
+///Access control enum
 enum S3AccessControl {
   unknown,
   private,

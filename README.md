@@ -11,7 +11,7 @@ An advance yet simple to use AWS S3 plugin for upload and deletion.
 
 Add  dependency in *pubspec.yaml*
 
-`simple_s3: 0.3.1`
+`simple_s3: 0.3.2`
 
  [Follow @ab_hi_j on Twitter](https://twitter.com/ab_hi_j)
 
